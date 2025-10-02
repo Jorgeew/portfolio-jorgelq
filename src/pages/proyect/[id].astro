@@ -1,0 +1,101 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection, render } from "astro:content";
+import TechBadge from "../../components/TechBadge.astro";
+
+export async function getStaticPaths() {
+    const projects = await getCollection("projects");
+    return projects.map((project) => ({
+        params: { id: project.slug },
+        props: { project },
+    }));
+}
+
+const { project } = Astro.props;
+const { data, slug } = project;
+const { title, description, date, img, tools, designs, video, priority } = data;
+
+const { Content } = await render(project);
+---
+
+<Layout title={`${title} | Dev Books`} description={description}>
+    <section
+      id="proyectos"
+      class="w-full mx-auto max-w-5xl px-4 py-12 sm:py-16 md:py-20"
+    >
+      <!-- Bloque principal: imagen + contenido -->
+      <div class="mt-6 flex flex-col lg:flex-row gap-8 lg:gap-16">
+        <!-- Imagen a la izquierda -->
+        <aside class="lg:w-5/12 flex flex-col items-center lg:items-start gap-4">
+          <img
+            transition:name={`img-${slug}`}
+            class="rounded w-56 sm:w-64 md:w-72 lg:w-full h-auto"
+            src={img}
+            alt={title}
+            loading="eager"
+            decoding="async"
+          />
+          <span class="text-xs" id="score"></span>
+        </aside>
+  
+        <!-- Contenido -->
+        <main class="lg:flex-1 lg:text-left">
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">{title}</h1>
+  
+          <ul class="flex flex-wrap justify-center lg:justify-start gap-2 mb-8">
+            {(tools ?? []).map((t) => (
+              <li><TechBadge label={t} /></li>
+            ))}
+          </ul>
+  
+          <article
+            class="prose prose-invert sm:prose-lg lg:prose-xl max-w-none leading-relaxed
+                   prose-p:my-2 sm:prose-p:my-3 lg:prose-p:my-4
+                   prose-ul:my-2 prose-ol:my-2 prose-li:my-1
+                   prose-headings:mt-6 prose-headings:mb-3
+                   "
+          >
+            <Content/>
+          </article>
+        </main>
+      </div> <!-- 🔻 aquí cerramos el bloque principal -->
+
+      <!-- Sección de Diseño -->
+
+        {designs ? (
+            <section>
+              <h2 class="text-4xl py-20 text-center font-bold">Diseño</h2>
+              <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
+                {(designs ?? []).map((t, i) => (
+                  <div class="aspect-square">
+                    <img
+                      class="w-full h-full object-contain rounded-lg"
+                      src={t}
+                      alt={`Diseño del proyecto - ${title} ${i + 1}`}
+                    />
+                  </div>
+                ))}
+              </div>
+            </section>
+        ) : null}
+
+        <!-- Sección de Video -->
+        {video ? (
+            <h2 class="text-4xl py-10 pt-20 text-center font-bold">Vídeos</h2>
+            <div class="grid grid-cols-1 gap-10 justify-center">
+                {(video ?? []).map((t) => (
+                    <video
+                        class="rounded-lg w-full max-w-6xl"
+                        src={t}
+                        controls
+                        muted
+                        loop
+                    />
+                ))}
+            </div>
+        ) : null}
+        
+    </section>
+</Layout>
+  
+  

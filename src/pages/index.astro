@@ -1,11 +1,188 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Badge from "../components/Badge.astro";
+import SocialMedia from "../components/SocialMedia.astro";
+import Experience from "../components/Experience.astro";
+
+import LinkedIn from "../icons/LinkedIn.astro";
+import Gmail from "../icons/Gmail.astro";
+import CV from "../icons/CV.astro";
+import Code from "../icons/Code.astro";
+
+import { getCollection, render } from "astro:content";
+const projects = (await getCollection("projects"))
+  .sort((a, b) => (a.data.priority ?? 99) - (b.data.priority ?? 99));
+
+const experiences = (await getCollection("experiences"))
+  .sort((a, b) => (a.data.priority ?? 99) - (b.data.priority ?? 99));
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+	title="Portfolio de Jorge Larrosa Quesada - Desarrollador y Programador de XR y Web con experiencia en Unity"
+	description="Contrata a Jorge Larrosa Quesada para proyectos de XR y Web. Desarrollador de Realidad Mixta y Virtual con experiencia en Unity."
+>
+	<main id="inicio">
+		<section
+			id="sobre-mi"
+			class="w-full mx-auto max-w-[740px] py-8 sm:py-20 md:pt-44 lg:pt-44 px-4 text-center lg:text-left md:text-left xs:py-1"
+		>
+			<div class="opacity-0 translate-y-2 transition-all duration-500 will-change-transform" data-animate>
+				<!-- Foto -->
+				<img
+					class="rounded-full size-24 sm:size-28 md:size-32 mb-6 mx-auto lg:mx-0 md:mx-0 object-cover object-top"
+					src="/foto.webp"
+					alt="Jorge Logo"
+				/>
+
+				<!-- Título -->
+				<h1
+					
+					class="text-3xl sm:text-4xl lg:text-5xl font-bold flex flex-col lg:flex-row md:flex-row lg:items-center gap-4 pb-8"
+					
+				>
+					Hey, soy Jorge
+					<a
+						href="https://www.linkedin.com/in/jorge-larrosa-quesada/"
+						target="_blank"
+						rel="noopener"
+						class="flex justify-center lg:justify-start"
+					>
+						<Badge>Actualmente trabajando</Badge>
+					</a>
+				</h1>
+			</div>
+
+			<div class="opacity-0 translate-y-2 transition-all duration-1000" data-animate>
+				<!-- Subtítulo -->
+				<h2 class="text-pretty text-lg sm:text-xl lg:text-2xl space-y-2">
+					<span
+						>💻 Desarrollador de <span class="text-blue-400">XR</span> y
+						<span class="text-pink-400">Web</span>.</span
+					>
+					<span class="text-blue-200/90">⏳ +1 año de experiencia.</span>
+					<span class=""
+						>Trabajando en <span class="text-orange-400">ITI</span> 🚀.</span
+					>
+					<span class="text-gray-300/90">
+						Especializado en <span class="text-purple-400 font-semibold"
+							>Realidad Mixta</span
+						> y
+						<span class="text-indigo-400 font-semibold">Virtual</span>.
+					</span>
+					<span class="opacity-80">Alicante, España 📍.</span>
+				</h2>
+
+				<!-- Redes sociales -->
+				<nav
+					class="flex flex-wrap justify-center lg:justify-start gap-3 mt-8"
+				>
+					<SocialMedia
+						href="https://www.linkedin.com/in/jorge-larrosa-quesada/"
+					>
+						<LinkedIn class="size-5" />
+						LinkedIn
+					</SocialMedia>
+					<SocialMedia href="mailto:jorgelarrosaquesada@gmail.com">
+						<Gmail class="size-5" />
+						Gmail
+					</SocialMedia>
+					<SocialMedia
+						href="/Currículum.pdf"
+						download="Jorge_Larrosa_CV.pdf"
+						target="_blank"
+					>
+						<CV class="size-5" />
+						Currículum
+					</SocialMedia>
+				</nav>
+			</div>
+		</section>
+
+		<section 
+			id="experiencia"
+			class="w-full mx-auto max-w-[740px] py-20 sm:py-20 lg:pt-10 px-4 text-center lg:text-left opacity-0 translate-y-2 transition-all duration-1500 will-change-transform" data-animate
+		>
+			<h2 class="text-3xl font-semibold mb-10 flex items-center gap-x-3">
+				Experiencia
+			</h2>
+			{await Promise.all(
+				experiences.map(async (experience) => {
+				  const { data } = experience;
+				  const { title, working, date, archivo, type } = data;
+			  
+				  // Mejor: usa la API del entry
+				  const { Content } = await experience.render();
+			  
+				  return (
+					<Experience
+					  title={title}
+					  working={working ?? false}
+					  date={date}
+					  archivo={archivo}
+					  type={type}
+					>
+					  <Content />
+					</Experience>
+				  );
+				})
+			  )}
+		</section>
+
+		<section
+			id="proyectos"
+			class="w-full mx-auto max-w-[740px] py-20 sm:py-20 lg:pt-10 px-4 lg:text-left opacity-0 translate-y-2 transition-all duration-2500 will-change-transform" data-animate
+		>
+			<h2 class="text-3xl font-semibold mb-6 flex items-center gap-x-3">
+				<Code class="size-10" />
+				Proyectos
+			</h2>
+			{
+				projects.map((project) => {
+					const { slug, data } = project;
+					const { title, img, description, date, designs, video, tools} = data;
+					return (
+					<div class="grid max-w-screen-xl px-4 py-2 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12">
+						<div class="pb-8 mr-auto place-self-center lg:col-span-7">
+							<h1 class="max-w-2xl mb-4 text-2xl font-extrabold tracking-tight leading-none md:text-2xl xl:text-2xl dark:text-white">
+								{title}
+							</h1>
+
+							<div class="ml-2 mb-6 lg:hidden order-2 flex justify-center">
+								<img
+									transition:name={`img-${slug}`}
+									class="rounded-lg object-contain w-full max-w-xs h-auto"
+									src={img}
+									alt="Imagen del Proyecto"
+								/>
+							</div>
+
+							<p class="text-left max-w-2xl mb-6 mr-2 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+								{description}
+							</p>
+							<a
+								href={`/proyect/${slug}`}
+								class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white hover:scale-110 dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800"
+							>
+								<span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+									Más información
+								</span>
+							</a>
+						</div>
+
+							<div class="hidden lg:flex lg:col-span-5">
+								<img
+									transition:name={`img-${slug}`}
+									class="rounded-lg object-contain w-full max-w-md h-auto"
+									src={img}
+									alt="Imagen del Proyecto"
+								/>
+							</div>
+					</div>
+
+					);
+				})
+			}
+		</section>
+	</main>
 </Layout>
