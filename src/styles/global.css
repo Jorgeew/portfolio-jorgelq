@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+[data-animate] {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity .5s ease, transform .5s ease;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    [data-animate].hidden {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    [data-animate].show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

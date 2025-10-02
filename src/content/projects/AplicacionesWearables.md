@@ -12,9 +12,9 @@ tools:
   - MQTT
 
 video: 
-  - /projects/demo/avatar_fisico_funcionamiento-1.mp4
-  - /projects/demo/smartwatch_funcionamiento.mp4
-  - /projects/demo/emotibit_enviar_datos-1.mp4
+  - https://youtu.be/rkMTVsoj6KA
+  - https://youtu.be/_uXi7XxLhao
+  - https://youtu.be/biw69uB-3kA
 
 ---
 

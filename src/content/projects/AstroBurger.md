@@ -11,7 +11,7 @@ tools:
   - SteamVR
 
 video: 
-  - /projects/demo/astroBurger.mp4
+  - https://youtu.be/Ju8yjIONTOc
 ---
 **Space Burger VR** es un mini juego de **Realidad Virtual** en el que te conviertes en un cocinero intergaláctico.  
 Tu misión: preparar **hamburguesas espaciales** mientras lidias con los retos de la **gravedad cero** y la impaciencia de los **clientes alienígenas** 👽.  

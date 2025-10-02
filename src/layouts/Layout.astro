@@ -4,6 +4,8 @@ import Footer from "../components/Footer.astro";
 
 import "../styles/tailwind.css";
 import '@fontsource-variable/onest';
+import onestWoff2 from "@fontsource-variable/onest/files/onest-latin-wght-normal.woff2";
+
 import { ClientRouter } from "astro:transitions";
 interface Props{
 	title: string;
@@ -22,6 +24,14 @@ const { description, title } = Astro.props;
 		<title>{title}</title>
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="description" content={description}>
+		<!-- …tus metas… -->
+		<link
+			rel="preload"
+			as="font"
+			type="font/woff2"
+			href={onestWoff2}
+			crossorigin
+	 	 />
 
 		 <!-- Open Graph -->
 		 <meta property="og:type" content="website" />
@@ -34,6 +44,8 @@ const { description, title } = Astro.props;
 		 <meta name="twitter:title" content={title} />
 		 <meta name="twitter:description" content={description} />
 		 <meta name="twitter:image" content="/og-image.png" />
+
+		 
 
 		<!-- JSON-LD global: Person + WebSite -->
 		<script type="application/ld+json">
@@ -73,9 +85,6 @@ const { description, title } = Astro.props;
 </html>
 
 <style is:global>
-	:root{
-		--color-scheme: light dark;
-	}
 	html {
 		font-family: 'Onest Variable', sistem-ui, sans-serif;
 		scroll-behavior: smooth;
@@ -85,13 +94,17 @@ const { description, title } = Astro.props;
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
+		background-color: #0a0a0a;
 	}
 
-	@media (prefers-rediced-motion: reduce){
-		html {
-			scroll-behavior: auto;
-		}
-	}
+	@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * {
+      animation: none !important;
+      transition: none !important;
+      scroll-behavior: auto !important;
+    }
+  }
 </style>
 
 <script is:inline>
