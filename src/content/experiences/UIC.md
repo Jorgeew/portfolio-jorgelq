@@ -1,5 +1,5 @@
 ---
-title: "Desarrollador de XR | Universitat Internacional de Catalunya."
+title: "Desarrollador de XR | Universitat Internacional de Catalunya"
 priority: 1
 date: "Diciembre 2024 - Presente"
 working: true
