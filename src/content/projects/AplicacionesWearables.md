@@ -9,7 +9,7 @@ tools:
   - Arduino
   - Python
   - ZMQ
-  - MQTT
+  - Joaquín
 
 video: 
   - https://youtu.be/rkMTVsoj6KA
