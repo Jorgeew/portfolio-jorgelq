@@ -30,11 +30,10 @@ const experiences = (await getCollection("experiences"))
 			id="sobre-mi"
 			class="w-full mx-auto max-w-[740px] py-8 sm:py-20 md:pt-44 lg:pt-44 px-4 text-center lg:text-left md:text-left xs:py-1"
 		>
-			<div data-animate
-			class="will-change-transform motion-safe:animate-fade-slide-in motion-reduce:animate-none">
+			<div>
 				<!-- Foto -->
 				<img
-					class="rounded-full size-24 sm:size-28 md:size-32 mb-6 mx-auto lg:mx-0 md:mx-0 object-cover object-top"
+					class="animate__animated animate__bounce rounded-full size-24 sm:size-28 md:size-32 mb-6 mx-auto lg:mx-0 md:mx-0 object-cover object-top"
 					src={foto.src}
 					width={foto.width}
 					height={foto.height}
@@ -47,7 +46,7 @@ const experiences = (await getCollection("experiences"))
 				<!-- Título -->
 				<h1
 					
-					class="text-3xl sm:text-4xl lg:text-5xl font-bold flex flex-col lg:flex-row md:flex-row lg:items-center gap-4 pb-8"
+					class="animate__animated animate__bounce text-3xl sm:text-4xl lg:text-5xl font-bold flex flex-col lg:flex-row md:flex-row lg:items-center gap-4 pb-8 "
 					
 				>
 					Hey, soy Jorge
