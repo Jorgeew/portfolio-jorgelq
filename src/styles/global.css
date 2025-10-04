@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "animate.css";
 
 [data-animate] {
     opacity: 1;
