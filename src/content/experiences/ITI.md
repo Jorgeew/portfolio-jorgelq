@@ -1,5 +1,5 @@
 ---
-title: "Becario de TI | ITI"
+title: "Prácticas de TI | ITI"
 priority: 2
 date: "Febrero 2024 - Junio 2024"
 working: false

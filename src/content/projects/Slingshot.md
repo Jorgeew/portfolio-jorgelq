@@ -1,6 +1,6 @@
 ---
 title: Slingshot
-priority: 4
+priority: 5
 date: '2022'
 img: /projects/Slingshot.webp
 description: 'Videojuego en tercera persona desarrollado en Unity donde el jugador controla a un zorro armado con un tirachinas para derrotar enemigos y superar niveles.'
@@ -43,3 +43,5 @@ Proyecto realizado durante un **cuatrimestre** en el **2º curso universitario**
 ---
 
 ✨ Este proyecto me permitió afianzar mis habilidades en **programación en C# para videojuegos** y **modelado 3D**, además de explorar la integración de animaciones y mecánicas de combate en Unity.
+
+---

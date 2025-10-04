@@ -1,6 +1,6 @@
 ---
 title: AstroBurger
-priority: 2
+priority: 3
 date: '2024'
 img: /projects/astroBurger.webp
 description: 'Un divertido mini juego en Realidad Virtual donde te conviertes en un chef espacial.'
@@ -13,7 +13,7 @@ tools:
 video: 
   - https://youtu.be/Ju8yjIONTOc
 ---
-**Space Burger VR** es un mini juego de **Realidad Virtual** en el que te conviertes en un cocinero intergaláctico.  
+**Astro Burger VR** es un mini juego de **Realidad Virtual** en el que te conviertes en un cocinero intergaláctico.  
 Tu misión: preparar **hamburguesas espaciales** mientras lidias con los retos de la **gravedad cero** y la impaciencia de los **clientes alienígenas** 👽.  
 
 El jugador debe coordinar movimientos, manipular ingredientes flotantes y servir pedidos lo más rápido posible antes de que los ovnis pierdan la paciencia.  

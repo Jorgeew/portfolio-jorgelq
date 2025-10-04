@@ -46,3 +46,5 @@ En este proyecto se desarrollaron distintos prototipos funcionales:
 ---
 
 ✨ Este trabajo me permitió profundizar en el campo de la **XR aplicada a la salud**, combinando hardware, software y visualización inmersiva para explorar nuevas formas de **intervención emocional y terapéutica**.
+
+---

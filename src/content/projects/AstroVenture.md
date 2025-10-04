@@ -1,6 +1,6 @@
 ---
 title: AstroVenture
-priority: 3
+priority: 4
 date: '2024'
 img: /projects/astroventure.webp
 description: 'Mini Juego en Realidad Aumentada con marcadores donde se controla un coche mediante el puntero de la pantalla.'
@@ -19,7 +19,7 @@ designs:
 ---
 **AstroVenture** es un mini juego en **Realidad Aumentada (AR)** desarrollado como proyecto universitario en el 4º curso.  
 
-La mecánica principal consiste en utilizar **marcadores físicos** que, al ser detectados por la cámara, generan un entorno virtual sobre el cual se puede interactuar. El jugador controla el **movimiento de un coche espacial** con el puntero de la pantalla, enfrentándose al reto de mantener la estabilidad y precisión en un entorno inmersivo.
+La mecánica principal consiste en utilizar **marcadores físicos** que, al ser detectados por la cámara, generan un entorno virtual sobre el cual se puede interactuar. El jugador controla el **movimiento de un coche espacial** mediante el movimiento del móvil, enfrentándose al reto de mantener la estabilidad y precisión en un entorno inmersivo.
 
 <br>
 
@@ -42,3 +42,5 @@ Proyecto desarrollado en **15 días** como parte de las prácticas de la asignat
 ---
 
 ✨ Con AstroVenture pude experimentar con la **jugabilidad en entornos AR**, reforzando mis conocimientos en **Unity, Vuforia y modelado 3D** para la creación de experiencias interactivas.
+
+---
