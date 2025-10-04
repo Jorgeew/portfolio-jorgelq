@@ -167,10 +167,10 @@ const experiences = (await getCollection("experiences"))
 
 						{/* Imagen móvil: ratio fijo para evitar CLS */}
 						<div class="ml-2 mb-6 lg:hidden order-2 flex justify-center">
-						<div class="w-full max-w-xs aspect-[4/3]">
+						<div class="w-full max-w-xs">
 							<img
 							transition:name={`img-${slug}`}
-							class="rounded-lg object-contain w-full h-full"
+							class="rounded-lg h-full w-full object-contain"
 							src={img}
 							alt={`Imagen del proyecto: ${title}`}
 							loading="lazy"
@@ -195,20 +195,23 @@ const experiences = (await getCollection("experiences"))
 						</a>
 					</div>
 
-					{/* Imagen desktop: ratio fijo + lazy */}
-					<div class="hidden lg:flex lg:col-span-5">
-						<div class="w-full max-w-md aspect-[4/3]">
-						<img
-							transition:name={`img-${slug}`}
-							class="rounded-lg object-contain w-full h-full"
-							src={img}
-							alt={`Imagen del proyecto: ${title}`}
-							loading="lazy"
-							decoding="async"
-							sizes="(min-width: 1024px) 480px, 100vw"
-						/>
+					<!-- Imagen desktop: ratio fijo + lazy -->
+					<!-- Imagen desktop: mismo tamaño visual, sin recortes -->
+						<div class="hidden lg:block lg:col-span-5">
+							<figure
+								class="w-full max-w-md aspect-[4/3] rounded-xl shadow-lg
+								 p-4 grid place-items-center">
+								<img
+									transition:name={`img-${slug}`}
+									src={img}
+									alt={`Imagen del proyecto: ${title}`}
+									class="w-full h-full object-contain block object-center" 
+									loading="lazy"
+									decoding="async"
+									sizes="(min-width:1024px) 480px, 100vw"
+								/>
+							</figure>
 						</div>
-					</div>
 					</div>
 				);
 				})
@@ -216,3 +219,4 @@ const experiences = (await getCollection("experiences"))
 			</section>
 	</main>
 </Layout>
+
