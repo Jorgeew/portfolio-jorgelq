@@ -2,36 +2,38 @@
 
 ![Preview](public/og-image.jpg)
 
-## 👋 Sobre mí
-Soy **Jorge Larrosa Quesada**, desarrollador especializado en **XR (Realidad Extendida), Realidad Mixta y Virtual**, con experiencia también en **desarrollo web moderno**.  
-Actualmente trabajando en **ITI** 🚀, con más de **+1 año de experiencia** en el sector.
+## 👋 **Sobre mí**
 
-Este portfolio está construido con **[Astro](https://astro.build/)** y **TailwindCSS**, desplegado en **Vercel**.
+Soy **Jorge Larrosa Quesada**, desarrollador especializado en **Realidad Extendida (XR)**, con enfoque en **Realidad Mixta y Virtual**, y experiencia en **desarrollo web moderno**.  
 
----
+Actualmente trabajo en la **Universitat Internacional de Catalunya**, donde aplico la tecnología para crear experiencias interactivas e innovadoras. Cuento con más de **2 años de experiencia profesional** en el sector tecnológico 🚀.  
 
-## ✨ Tecnologías utilizadas
-- ⚡ **Astro** – Framework ultrarrápido para sitios estáticos.
-- 🎨 **TailwindCSS** – Estilos modernos y responsivos.
-- 🧑‍💻 **TypeScript** – Tipado seguro.
-- 🖼️ **Astro Content Collections** – Gestión de proyectos y experiencias.
-- 📹 **YouTube Lite Embed** – Vídeos optimizados para mejor rendimiento.
-- ☁️ **Vercel** – Hosting y CI/CD.
+Este portfolio ha sido desarrollado con **[Astro](https://astro.build/)** y **TailwindCSS**, y está desplegado en **[Vercel](https://vercel.com/)**.
 
 ---
 
-## 📂 Estructura del proyecto
+## ✨ **Tecnologías utilizadas**
 
-```bash
-/
-├── public/               # Archivos estáticos (imágenes, PDF, favicon...)
-├── src/
-│   ├── components/       # Componentes reutilizables (Header, Footer, etc.)
-│   ├── content/          # Colecciones: proyectos y experiencias
-│   ├── icons/            # Iconos SVG en Astro
-│   ├── layouts/          # Layouts base
-│   ├── pages/            # Páginas principales (index, proyect/[slug].astro)
-│   └── styles/           # Estilos globales
-├── astro.config.mjs      # Configuración Astro
-├── package.json          # Dependencias y scripts
-└── tailwind.config.cjs   # Configuración Tailwind
+- ⚡ **Astro** — Framework ultrarrápido para sitios estáticos y componentes modernos.  
+- 🎨 **TailwindCSS** — Estilos elegantes, personalizables y totalmente responsivos.  
+- 🧑‍💻 **TypeScript** — Tipado estático y desarrollo más seguro.  
+- 🖼️ **Astro Content Collections** — Gestión estructurada de proyectos y experiencias.  
+- 📹 **YouTube Lite Embed** — Integración optimizada de vídeos para mejorar el rendimiento.  
+- ☁️ **Vercel** — Plataforma de hosting y despliegue continuo (CI/CD).  
+
+---
+
+## 🧭 **Objetivo**
+
+Este portfolio refleja mi **trayectoria**, mis **proyectos** y mi **pasión por unir tecnología y creatividad** para construir experiencias inmersivas, útiles y visualmente atractivas.  
+
+---
+
+## 📬 **Contacto**
+
+- 💼 [LinkedIn](https://www.linkedin.com/in/jorgelarrosaquesada/)  
+- 🌐 [Web Personal](https://www.jorgelq.com)  
+- ✉️ **jorgelarrosaquesada@gmail.com**
+
+---
+
